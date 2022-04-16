@@ -1,3 +1,5 @@
+import './style.css';
+
 const quizData = [
     {
         question: 'What HTML stands for?',

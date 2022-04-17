@@ -1,4 +1,10 @@
 import './style.css';
+const questionText =  document.getElementById('question');
+const submitBtn = document.querySelector('.submit-btn');
+const a_text = document.getElementById('a-text');
+const b_text = document.getElementById('b-text');
+const c_text = document.getElementById('c-text');
+const d_text = document.getElementById('d-text');
 
 const quizData = [
     {
@@ -59,3 +65,26 @@ const quizData = [
     },
 
 ];
+
+let quizCount = 1;
+loadQuiz();
+
+function loadQuiz () {
+const currentQuiz = quizData[quizCount];
+const currentQuestion = currentQuiz.question
+
+questionText.innerText = currentQuestion
+a_text.innerText = currentQuiz.a
+b_text.innerText = currentQuiz.b
+c_text.innerText = currentQuiz.c
+d_text.innerText = currentQuiz.d
+
+
+}
+
+submitBtn.addEventListener("click", () =>{
+    quizCount++
+    loadQuiz()
+    
+})
+
